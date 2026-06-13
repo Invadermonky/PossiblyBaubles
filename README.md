@@ -2,6 +2,8 @@
 Possibly Baubles is an addon to Actually Additions that adds Bauble capabilities to numerous items. The necessary code is added via mixins, allowing seamless integration without the need for new items.
 
 ## Features
+All listed baubles integrations can be enabled or disabled in the mod configuration.
+
 - **Batteries** - All battery variants can be equipped as charms
 - **Engineer's Goggles** - Engineer's Goggles can be equipped as a head bauble
 - **Potion Rings** - Potion Rings can be equipped as rings ¹
