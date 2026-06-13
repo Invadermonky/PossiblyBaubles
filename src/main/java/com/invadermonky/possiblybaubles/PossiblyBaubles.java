@@ -1,6 +1,6 @@
 package com.invadermonky.possiblybaubles;
 
-import com.invadermonky.possiblybaubles.client.KeybindOpenSack;
+import com.invadermonky.possiblybaubles.client.KeybindsPB;
 import com.invadermonky.possiblybaubles.handlers.ConfigHandlerPB;
 import com.invadermonky.possiblybaubles.handlers.SackPickupEventHandler;
 import com.invadermonky.possiblybaubles.inventory.GuiHandlerPB;
@@ -45,7 +45,7 @@ public class PossiblyBaubles {
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-        if(ConfigHandlerPB.SETTINGS.sackKeybind) {
+        if(ConfigHandlerPB.SETTINGS.openSackKeybind) {
             NetworkRegistry.INSTANCE.registerGuiHandler(PossiblyBaubles.INSTANCE, new GuiHandlerPB());
         }
     }
@@ -53,8 +53,8 @@ public class PossiblyBaubles {
     @SideOnly(Side.CLIENT)
     @Mod.EventHandler
     public void initClient(FMLInitializationEvent event) {
-        if(ConfigHandlerPB.SETTINGS.sackKeybind) {
-            KeybindOpenSack.initKeybind();
+        if(ConfigHandlerPB.SETTINGS.openSackKeybind) {
+            KeybindsPB.initKeybinds();
         }
     }
 }

@@ -62,7 +62,12 @@ public class ConfigHandlerPB {
         @Config.RequiresMcRestart
         @Config.Name("Open Sack Keybind")
         @Config.Comment("Adds a keybind that allows players to open Sacks equipped in baubles slots.")
-        public boolean sackKeybind = true;
+        public boolean openSackKeybind = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Toggle Magnet Keybind")
+        @Config.Comment("Adds a keybind that allows players to toggle Ring of Magnetization in inventory or bauble slots.")
+        public boolean toggleMagnetKeybind = true;
     }
 
     @Mod.EventBusSubscriber(modid = PossiblyBaubles.MOD_ID)
