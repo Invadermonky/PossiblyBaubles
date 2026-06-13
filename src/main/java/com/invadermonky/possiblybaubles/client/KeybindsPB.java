@@ -60,6 +60,7 @@ public class KeybindsPB {
     public static void initKeybinds() {
         boolean register = false;
         if(ConfigHandlerPB.SETTINGS.openSackKeybind) {
+            register = true;
             openSackGui = new KeyBinding("key." + PossiblyBaubles.MOD_ID + ".open_sack", new IKeyConflictContext() {
                 @Override
                 public boolean isActive() {
@@ -82,10 +83,10 @@ public class KeybindsPB {
                 }
             }, Keyboard.KEY_V, KEY_CATEGORY);
             ClientRegistry.registerKeyBinding(openSackGui);
-            register = true;
         }
 
         if(ConfigHandlerPB.SETTINGS.toggleMagnetKeybind) {
+            register = true;
             toggleMagnet = new KeyBinding("key." + PossiblyBaubles.MOD_ID + ".toggle_magnet", new IKeyConflictContext() {
                 @Override
                 public boolean isActive() {

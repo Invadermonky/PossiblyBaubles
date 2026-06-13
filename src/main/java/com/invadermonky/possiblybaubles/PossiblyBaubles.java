@@ -62,8 +62,6 @@ public class PossiblyBaubles {
     @SideOnly(Side.CLIENT)
     @Mod.EventHandler
     public void initClient(FMLInitializationEvent event) {
-        if(ConfigHandlerPB.SETTINGS.openSackKeybind) {
-            KeybindsPB.initKeybinds();
-        }
+        KeybindsPB.initKeybinds();
     }
 }
