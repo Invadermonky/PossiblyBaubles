@@ -12,8 +12,8 @@ Possibly Baubles is an addon to Actually Additions that adds Bauble capabilities
 - **Wings of the Bat** - Wings of the Bat can be equipped as body bauble
 
 [¹] \(**Configurable**\) By default only advanced rings provide their effects when equipped. <br>
-[²] Includes new keybind to toggle all Rings of Magnetism equipped or in a player's inventory.<br>
-[³] Equipped sacks can be accessed using new keybind that will open its associated inventory.
+[²] \(**Configurable**\) Includes new keybind to toggle all Rings of Magnetism in the player's inventory.<br>
+[³] \(**Configurable**\) Equipped sacks can be accessed using new keybind that will open its inventory.
 
 ## FAQ
 **Q:** Doesn't Actually Baubles already exist? Why did you make this then?<br>
