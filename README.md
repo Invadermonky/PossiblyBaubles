@@ -20,6 +20,3 @@ All listed baubles integrations can be enabled or disabled in the mod configurat
 ## FAQ
 **Q:** Doesn't Actually Baubles already exist? Why did you make this then?<br>
 **A:** Actually Baubles creates entirely new items that have to be converted from Actually Addition items. Possibly Baubles uses mixins to add the necessary code to items directly, so there is no need for the new items.
-
-**Q:** Why did you make this mod?<br>
-**A:** Spite.
