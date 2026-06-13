@@ -55,6 +55,14 @@ public class ConfigHandlerPB {
     }
 
     public static class ConfigSettings {
+        @Config.RequiresMcRestart
+        @Config.Name("Enable Data Fixers")
+        @Config.Comment({
+                "Enables the item data fixer. This will ensure that replacing Actually Baubles with this mod will not",
+                "cause items to disappear. If this is not needed you can disable this feature."
+        })
+        public boolean enableDataFixers = true;
+
         @Config.Name("Potion Ring - Advanced Only")
         @Config.Comment("Only the advanced variants of the potion rings will provide their effects when equipped.")
         public boolean potionRingAdvancedOnly = true;

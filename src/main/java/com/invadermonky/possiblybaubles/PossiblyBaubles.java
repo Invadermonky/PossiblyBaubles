@@ -2,10 +2,12 @@ package com.invadermonky.possiblybaubles;
 
 import com.invadermonky.possiblybaubles.client.KeybindsPB;
 import com.invadermonky.possiblybaubles.handlers.ConfigHandlerPB;
+import com.invadermonky.possiblybaubles.handlers.DataFixerHandler;
 import com.invadermonky.possiblybaubles.handlers.SackPickupEventHandler;
 import com.invadermonky.possiblybaubles.inventory.GuiHandlerPB;
 import com.invadermonky.possiblybaubles.network.PacketHandlerPB;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -40,6 +42,13 @@ public class PossiblyBaubles {
         PacketHandlerPB.init();
         if(ConfigHandlerPB.TOGGLES.sacks) {
             MinecraftForge.EVENT_BUS.register(new SackPickupEventHandler());
+        }
+    }
+
+    @Mod.EventHandler
+    public void init(FMLInitializationEvent event) {
+        if(ConfigHandlerPB.SETTINGS.enableDataFixers && !Loader.isModLoaded("actuallybaubles")) {
+            DataFixerHandler.init();
         }
     }
 
