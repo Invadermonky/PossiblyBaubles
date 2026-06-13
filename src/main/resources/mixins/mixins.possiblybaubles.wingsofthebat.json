@@ -1,0 +1,13 @@
+{
+	"package": "com.invadermonky.possiblybaubles.mixins.items" ,
+	"required": true ,
+	"refmap": "mixins.franklybaubles.refmap.json" ,
+	"target": "@env(DEFAULT)" ,
+	"minVersion": "0.8.5" ,
+	"compatibilityLevel": "JAVA_8" ,
+	"mixins": [
+		"ItemWingsOfTheBatsBaubleMixin"
+	] ,
+	"server": [] ,
+	"client": []
+}
