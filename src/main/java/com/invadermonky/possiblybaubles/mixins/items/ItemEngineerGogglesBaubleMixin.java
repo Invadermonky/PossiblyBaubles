@@ -25,7 +25,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.List;
 import java.util.Set;
 
-@SideOnly(Side.CLIENT)
 @Mixin(value = ItemEngineerGoggles.class, remap = false)
 public abstract class ItemEngineerGogglesBaubleMixin extends ItemArmorAA implements IBauble {
     @Shadow @Final private Set<Entity> cachedGlowingEntities;
@@ -34,6 +33,7 @@ public abstract class ItemEngineerGogglesBaubleMixin extends ItemArmorAA impleme
         super(name, material, type, repairItem);
     }
 
+    @SideOnly(Side.CLIENT)
     @Inject(
             method = "onClientTick",
             at = @At(

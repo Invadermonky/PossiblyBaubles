@@ -5,11 +5,12 @@
 	"target": "@env(DEFAULT)" ,
 	"minVersion": "0.8.5" ,
 	"compatibilityLevel": "JAVA_8" ,
-	"mixins": [] ,
+	"mixins": [
+		"items.ItemEngineerGogglesBaubleMixin"
+	] ,
 	"server": [] ,
 	"client": [
 		"client.BlockLaserRelayBaubleMixin" ,
-		"client.RenderLaserRelayBaubleMixin" ,
-		"items.ItemEngineerGogglesBaubleMixin"
+		"client.RenderLaserRelayBaubleMixin"
 	]
 }
