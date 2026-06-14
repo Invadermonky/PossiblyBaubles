@@ -59,7 +59,7 @@ public class KeybindsPB {
 
     public static void initKeybinds() {
         boolean register = false;
-        if(ConfigHandlerPB.SETTINGS.openSackKeybind) {
+        if(ConfigHandlerPB.SETTINGS.openSackKeybind && ConfigHandlerPB.TOGGLES.sacks) {
             register = true;
             openSackGui = new KeyBinding("key." + PossiblyBaubles.MOD_ID + ".open_sack", new IKeyConflictContext() {
                 @Override

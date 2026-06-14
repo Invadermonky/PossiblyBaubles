@@ -54,7 +54,7 @@ public class PossiblyBaubles {
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-        if(ConfigHandlerPB.SETTINGS.openSackKeybind) {
+        if(ConfigHandlerPB.SETTINGS.openSackKeybind && ConfigHandlerPB.TOGGLES.sacks) {
             NetworkRegistry.INSTANCE.registerGuiHandler(PossiblyBaubles.INSTANCE, new GuiHandlerPB());
         }
     }
