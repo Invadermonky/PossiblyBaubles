@@ -18,5 +18,8 @@ All listed baubles integrations can be enabled or disabled in the mod configurat
 [³] \(**Configurable**\) Equipped sacks can be accessed using new keybind that will open its inventory.
 
 ## FAQ
-**Q:** Doesn't Actually Baubles already exist? Why did you make this then?<br>
+**Q:** Doesn't Actually Baubles already exist?<br>
 **A:** Actually Baubles creates entirely new items that have to be converted from Actually Addition items. Possibly Baubles uses mixins to add the necessary code to items directly, so there is no need for the new items.
+
+**Q:** Can I replace Actually Baubles with Possibly Baubles?<br>
+**A:** Yes. Possibly Baubles includes a data fixer to ensure that swapping does not delete any existing items.
