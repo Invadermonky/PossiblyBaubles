@@ -8,6 +8,7 @@ import de.ellpeck.actuallyadditions.mod.items.ItemBattery;
 import de.ellpeck.actuallyadditions.mod.items.base.ItemEnergy;
 import de.ellpeck.actuallyadditions.mod.util.ItemUtil;
 import de.ellpeck.actuallyadditions.mod.util.StackUtil;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -16,11 +17,27 @@ import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.energy.IEnergyStorage;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = ItemBattery.class, remap = false)
 public abstract class ItemBatteryBaubleMixin extends ItemEnergy implements IBauble {
     public ItemBatteryBaubleMixin(int maxPower, int transfer, String name) {
         super(maxPower, transfer, name);
+    }
+
+    @Inject(method = "onUpdate", at = @At(value = "HEAD"), remap = true)
+    public void rechargeBaublesMixin(ItemStack stack, World world, Entity entity, int itemSlot, boolean isSelected, CallbackInfo ci) {
+        if (!world.isRemote && entity instanceof EntityPlayer && ItemUtil.isEnabled(stack) && !isSelected) {
+            EntityPlayer player = (EntityPlayer) entity;
+
+            IBaublesItemHandler handler = BaublesApi.getBaublesHandler(player);
+            for (int i = 0; i < handler.getSlots(); i++) {
+                ItemStack slot = handler.getStackInSlot(i);
+                this.franklyBaubles$rechargeItem(stack, slot);
+            }
+        }
     }
 
     @Override
