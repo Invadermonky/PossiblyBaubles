@@ -3,6 +3,8 @@
 ### Fixed
 - Fixed incorrect mixin implementation for Goggles
 - Fixed outlier config interactions when disabling sack bauble
+- Fixed Ring of Magnetization remap issue
+- Fixed Batteries not recharging baubles from player's inventory
 
 ---
 
