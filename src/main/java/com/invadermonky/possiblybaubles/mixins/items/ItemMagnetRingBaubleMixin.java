@@ -12,7 +12,8 @@ import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(value = ItemMagnetRing.class, remap = false)
 public abstract class ItemMagnetRingBaubleMixin implements IBauble {
-    @Shadow public abstract void onUpdate(ItemStack stack, World world, Entity entity, int par4, boolean par5);
+    @Shadow(remap = true)
+    public abstract void onUpdate(ItemStack stack, World world, Entity entity, int par4, boolean par5);
 
     @Override
     public void onWornTick(ItemStack stack, EntityLivingBase player) {
