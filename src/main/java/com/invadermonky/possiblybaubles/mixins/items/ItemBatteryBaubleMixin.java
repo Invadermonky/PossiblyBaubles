@@ -35,7 +35,7 @@ public abstract class ItemBatteryBaubleMixin extends ItemEnergy implements IBaub
             IBaublesItemHandler handler = BaublesApi.getBaublesHandler(player);
             for (int i = 0; i < handler.getSlots(); i++) {
                 ItemStack slot = handler.getStackInSlot(i);
-                this.franklyBaubles$rechargeItem(stack, slot);
+                this.possiblyBaubles$rechargeItem(stack, slot);
             }
         }
     }
@@ -49,12 +49,12 @@ public abstract class ItemBatteryBaubleMixin extends ItemEnergy implements IBaub
             IBaublesItemHandler handler = BaublesApi.getBaublesHandler(player);
             for(int i = 0; i < handler.getSlots(); i++) {
                 ItemStack slot = handler.getStackInSlot(i);
-                this.franklyBaubles$rechargeItem(stack, slot);
+                this.possiblyBaubles$rechargeItem(stack, slot);
             }
 
             for(int i = 0; i < player.inventory.getSizeInventory(); ++i) {
                 ItemStack slot = player.inventory.getStackInSlot(i);
-                this.franklyBaubles$rechargeItem(stack, slot);
+                this.possiblyBaubles$rechargeItem(stack, slot);
             }
         }
     }
@@ -70,7 +70,7 @@ public abstract class ItemBatteryBaubleMixin extends ItemEnergy implements IBaub
     }
 
     @Unique
-    private void franklyBaubles$rechargeItem(ItemStack battery, ItemStack toCharge) {
+    private void possiblyBaubles$rechargeItem(ItemStack battery, ItemStack toCharge) {
         if (StackUtil.isValid(toCharge) && toCharge.getCount() == 1) {
             int extractable = this.extractEnergy(battery, Integer.MAX_VALUE, true);
             int received = 0;

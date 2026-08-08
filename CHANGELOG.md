@@ -1,4 +1,10 @@
 # Changelog
+## [1.0.2]
+### Fixed
+- Fixed a number of old references using incorrect mod id
+
+---
+
 ## [1.0.1]
 ### Fixed
 - Fixed incorrect mixin implementation for Goggles

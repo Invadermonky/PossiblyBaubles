@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class FranklyBaublesLateLoader implements ILateMixinLoader {
+public class PossiblyBaublesLateLoader implements ILateMixinLoader {
     public static final ImmutableMap<String, Predicate<Context>> MIXINS = ImmutableMap.copyOf(new HashMap<String, Predicate<Context>>() {{
         put("mixins/mixins.possiblybaubles.battery.json", c -> ConfigHandlerPB.TOGGLES.battery);
         put("mixins/mixins.possiblybaubles.goggles.json", c -> ConfigHandlerPB.TOGGLES.goggles);
